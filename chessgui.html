@@ -1,0 +1,594 @@
+<html>
+<body>
+<table border="1" cellspacing="0" cellpadding="30" id="board">
+<tr>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+</tr>
+<tr>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+</tr>
+<tr>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+</tr>
+<tr>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+</tr>
+<tr>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+</tr>
+<tr>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+</tr>
+<tr>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+</tr>
+<tr>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+<td bgcolor="black"></td>
+<td bgcolor="white"></td>
+</tr>
+</table>
+<script>
+
+var c = prompt("Enter coin");
+var p = parseInt(prompt("Enter ith position"));
+var q = parseInt(prompt("Enter jth position"));
+var cells=document.querySelectorAll("#board td");
+setInterval(function()
+{
+if(c === "queen")
+{
+i = p;
+j = q;
+for(;i<=8;i++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(;j<=8;j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(;i>=1;i--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(;j>=1;j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(;i<=8&&j<=8;i++,j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+
+}
+i = p;
+j = q;
+for(;i>=1&&j>=1;i--,j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(;i<=8&&j>=1;i++,j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(;i>=1&&j<=8;i--,j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+}
+
+if(c === "knight")
+{
+var x=(p-1)*8+(q-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+i = p+1;
+j = q+2;
+for(; i<=8 && j<=8;i++,j+=2)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+i = p+1;
+j = q-2;
+for(; i<=8 && j>=1;i++,j-=2)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+i = p-1;
+j = q+2;
+for(; i>=1 && j<=8;i--,j+=2)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+i = p-1;
+j = q-2;
+for(; i>=1 && j>=1;i--,j-=2)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+i = p+2;
+j = q+1;
+for(; i<=8 && j<=8;i+=2,j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+i = p+2;
+j = q-1;
+for(; i<=8 && j>=1;i+=2,j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+i = p-2;
+j = q+1;
+for(; i>=1 && j<=8;i-=2,j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+i = p-2;
+j = q-1;
+for(; i>=1 && j>=1;i-=2,j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+}
+
+if(c === "rook")
+{
+i = p;
+j = q;
+for(; i<=8;i++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(; j<=8;j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(; i>=1;i--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+i = p;
+j = q;
+for(; j>=1;j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+}
+}
+
+if(c === "soldier")
+{
+var x=(p-1)*8+(q-1);
+cells[x].style.backgroundColor="pink";
+
+i = p - 1;
+j = q;
+for(; i>=1 && j>=1 && j<=8;i--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p - 1;
+j = q - 1;
+for(; i>=1 && j>=1;i--,j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p - 1;
+j = q + 1;
+for(; i>=1 && j<=8;i--,j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+}
+
+if(c === "king")
+{
+var x=(p-1)*8+(q-1);
+cells[x].style.backgroundColor="pink";
+
+i = p + 1;
+j = q;
+for(; i<=8 && j<=8 && j>=1;i++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p - 1;
+j = q;
+for(; i>=1 && j<=8 && j>=1;i--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p;
+j = q + 1;
+for(; i<=8 && j<=8;i++,j)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p;
+j = q - 1;
+for(; i<=8 && j>=1;i++,j)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p + 1;
+j = q + 1;
+for(; i<=8 && j<=8;i++,j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p + 1;
+j = q - 1;
+for(; i<=8 && j>=1;i++,j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p - 1;
+j = q + 1;
+for(; i>=1 && j<=8;i--,j++)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+
+i = p - 1;
+j = q - 1;
+for(; i>=1 && j>=1;i--,j--)
+{
+var x=(i-1)*8+(j-1);
+if(cells[x].style.backgroundColor=="red")
+{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="green";
+}else{
+cells[x].style.backgroundColor="pink";
+cells[x].style.backgroundColor="red";
+}
+break;
+}
+}
+
+},500);
+</script>
+</body>
+</html>
